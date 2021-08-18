@@ -21,6 +21,17 @@ export default function Game({ history }) {
         }
     }, [seconds, ms, history]);
 
+    const keyUpHandler = (e) => {
+        console.log(e.key);
+    }
+
+    useEffect(() => {
+        document.addEventListener('keyup', keyUpHandler);
+        return () => {
+            document.removeEventListener('keyup', keyUpHandler)
+        }
+    }, []);
+
     const updateTime = (startTime) => {
         const endTime = new Date();
         const msPassedStr = (endTime.getTime() - startTime.getTime()).toString();
