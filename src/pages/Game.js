@@ -12,6 +12,7 @@ export default function Game({ history }) {
         const currentTime = new Date();
         const interval = setInterval(() => updateTime(currentTime), 1);
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
