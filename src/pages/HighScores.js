@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ScoreLI, ScoresList } from '../styled/HighScores'
+import { StyledTitle } from '../styled/Misc'
 
 export default function HighScores() {
     const [highScores, setHighScores] = useState([])
@@ -19,10 +20,10 @@ export default function HighScores() {
 
     return (
         <div>
-            <h1>HighScores</h1>
+            <StyledTitle>HighScores</StyledTitle>
             <ScoresList>
-                {highScores.map((score) => 
-                    <ScoreLI key={score.id}>{score.fields.name} ... {score.fields.score}</ScoreLI>
+                {highScores.map((score, index) => 
+                    <ScoreLI key={score.id}>{index+1} - {score.fields.name} ... {score.fields.score}</ScoreLI>
                 )}
             </ScoresList>
         </div>
