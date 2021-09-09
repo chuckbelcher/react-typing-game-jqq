@@ -23,7 +23,7 @@ export default function Game({ history }) {
 
     useEffect(() => {
         if (seconds < -1) {
-            //Todo: Save the score
+            //Todo: Save the score --done in gameOver.js
             history.push('/gameOver');
         }
     }, [seconds, ms, history]);

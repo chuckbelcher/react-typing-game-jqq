@@ -1,9 +1,8 @@
 {
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "vue-html": "html"
-    },
-    "emmet.excludeLanguages": [
-        "markdown"
-    ]
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  "emmet.excludeLanguages": ["markdown"],
+  "cSpell.words": ["Airtable"]
 }
