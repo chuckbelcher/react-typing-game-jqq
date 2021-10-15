@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { StyledNavbar, StyledNavBrand, StyledNavItems, StyledLink } from '../styled/Navbar'
 import { Accent } from '../styled/Misc'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function Navbar() {
+    const { isAuthenticated, loginWithPopup, logout } = useAuth0() 
     return (
 
         <StyledNavbar>
@@ -12,7 +14,12 @@ export default function Navbar() {
             </StyledNavBrand>
             <StyledNavItems>
                 <li><StyledLink to="/highscores">High Scores</StyledLink></li>
-                <li><StyledLink to="/">Login</StyledLink></li>
+                {!isAuthenticated &&
+                    <li><button onClick={() => loginWithPopup()}>Login</button></li>
+                }
+                {isAuthenticated &&
+                    <li><button onClick={ () => logout({ returnTo: window.location.origin })}>Logout</button></li>
+                }
             </StyledNavItems>
         </StyledNavbar>
     )

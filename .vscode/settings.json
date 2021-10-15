@@ -4,5 +4,9 @@
     "vue-html": "html"
   },
   "emmet.excludeLanguages": ["markdown"],
-  "cSpell.words": ["Airtable"]
+  "cSpell.words": [
+    "Airtable",
+    "Ikabfz",
+    "pateogroup"
+  ]
 }
